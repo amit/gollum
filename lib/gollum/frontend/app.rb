@@ -42,6 +42,12 @@ module Precious
       show_page_or_file('Home')
     end
 
+    get '/v/all/?$' do
+      wiki = Gollum::Wiki.new(settings.gollum_path, settings.wiki_options)
+      @pages = wiki.pages
+      mustache :allpages
+    end
+
     get '/edit/*' do
       @name = params[:splat].first
       wiki = Gollum::Wiki.new(settings.gollum_path, settings.wiki_options)

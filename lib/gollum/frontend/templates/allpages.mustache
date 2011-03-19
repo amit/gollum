@@ -1,0 +1,25 @@
+<div class="guide">
+  <div class="main">
+    <div class="actions">
+      <form action="/search" method="get">
+        <div>
+          <a href="/">Home</a> | 
+          <input type="search" name="q" size="10" /> <input type="submit" value="search" />
+        </div>
+      </form>
+    </div>
+    <h1>{{title}}</h1>
+    <div class="content wikistyle gollum {{format}}">
+      <ul>
+      {{#pages}}
+        <li><a href="/{{title}}">{{title}}</a></li>
+      {{/pages}}
+      </ul>
+    </div>
+    {{#has_footer}}
+    <div class="footer wikistyle gollum {{footer_format}}">
+      {{{footer_content}}}
+    </div>
+    {{/has_footer}}
+  </div>
+</div>
